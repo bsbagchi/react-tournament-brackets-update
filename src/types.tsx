@@ -12,6 +12,12 @@ export type Participant = {
 
   resultText?: string | null;
 
+  image?: {
+    url: string | null;
+    width: number | null;
+    height: number | null;
+  } | null;
+
   [key: string]: any;
 };
 

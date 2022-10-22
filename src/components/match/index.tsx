@@ -50,6 +50,16 @@ function Match({
           hovered={topHovered}
           onClick={() => onPartyClick?.(topParty, topWon)}
         >
+          <img
+            src={
+              topParty?.image?.url
+                ? topParty.image.url
+                : 'https://gbarena-development.s3.amazonaws.com/users/avatars/1tPWg4yVDu3SKthqWM8Fvm.png'
+            }
+            width={topParty?.image?.width ? topParty.image.width : 30}
+            height={topParty?.image?.height ? topParty.image.height : 30}
+            alt="icon"
+          />
           <Team>{topParty?.name}</Team>
           <Score won={topWon}>{topParty?.resultText}</Score>
         </Side>
@@ -61,6 +71,15 @@ function Match({
           hovered={bottomHovered}
           onClick={() => onPartyClick?.(bottomParty, bottomWon)}
         >
+          <img
+            src={
+              bottomParty?.image?.url
+                ? bottomParty.image.url
+                : 'https://gbarena-development.s3.amazonaws.com/users/avatars/1tPWg4yVDu3SKthqWM8Fvm.png'
+            }
+            width={bottomParty?.image?.width ? bottomParty.image.width : 30}
+            height={bottomParty?.image?.height ? bottomParty.image.height : 30}
+          />
           <Team>{bottomParty?.name}</Team>
           <Score won={bottomWon}>{bottomParty?.resultText}</Score>
         </Side>
