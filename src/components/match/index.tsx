@@ -13,20 +13,20 @@ import {
 } from './styles';
 
 function Match({
-  bottomHovered,
-  bottomParty,
-  bottomText,
-  bottomWon,
-  match,
-  onMatchClick,
-  onMouseEnter,
-  onMouseLeave,
-  onPartyClick,
-  topHovered,
-  topParty,
-  topText,
-  topWon,
-}: MatchComponentProps) {
+                 bottomHovered,
+                 bottomParty,
+                 bottomText,
+                 bottomWon,
+                 match,
+                 onMatchClick,
+                 onMouseEnter,
+                 onMouseLeave,
+                 onPartyClick,
+                 topHovered,
+                 topParty,
+                 topText,
+                 topWon,
+               }: MatchComponentProps) {
   return (
     <Wrapper>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -54,13 +54,16 @@ function Match({
             src={
               topParty?.image?.url
                 ? topParty.image.url
-                : 'https://gbarena-development.s3.amazonaws.com/users/avatars/1tPWg4yVDu3SKthqWM8Fvm.png'
+                : 'https://gbarena-development.s3.amazonaws.com/users/avatars/defaults/default.png'
             }
             width={topParty?.image?.width ? topParty.image.width : 30}
             height={topParty?.image?.height ? topParty.image.height : 30}
             alt="icon"
-            style={{ borderRadius: topParty?.image?.borderRadius ? topParty.image.borderRadius : 10 }}
-
+            style={{
+              borderRadius: topParty?.image?.borderRadius
+                ? topParty.image.borderRadius
+                : 10, 
+            }}
           />
           <Team>{topParty?.name}</Team>
           <Score won={topWon}>{topParty?.resultText}</Score>
