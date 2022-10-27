@@ -36,7 +36,7 @@ export default function RoundHeader({
         {columnIndex + 1 === numOfRounds && 'Final'}
         {columnIndex + 1 === numOfRounds - 1 && 'Semi-final'}
         {columnIndex + 1 === numOfRounds - 2 && 'Quarter-final'}
-        {columnIndex + 1 < numOfRounds - 1 && `Round ${tournamentRoundText}`}
+        {columnIndex + 1 < numOfRounds - 2 && `Round ${tournamentRoundText}`}
       </text>
     </g>
   );
