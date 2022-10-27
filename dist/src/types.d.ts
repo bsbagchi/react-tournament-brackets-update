@@ -9,6 +9,7 @@ export declare type Participant = {
         url: string | null;
         width: number | null;
         height: number | null;
+        borderRadius?: number;
     } | null;
     [key: string]: any;
 };

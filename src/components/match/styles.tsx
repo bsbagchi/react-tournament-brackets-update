@@ -59,19 +59,19 @@ export const Side = styled.div<SideProps>`
     won ? theme.matchBackground.wonColor : theme.matchBackground.lostColor};
 
   :first-of-type {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    border-top-width: 2px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-width: 0px;
   }
   :last-of-type {
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-bottom-width: 2px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-width: 0px;
   }
-  border-right: 4px solid ${({ theme }) => theme.border.color};
-  border-left: 4px solid ${({ theme }) => theme.border.color};
-  border-top: 1px solid ${({ theme }) => theme.border.color};
-  border-bottom: 1px solid ${({ theme }) => theme.border.color};
+  border-right: 0px solid ${({ theme }) => theme.border.color};
+  border-left: 0px solid ${({ theme }) => theme.border.color};
+  border-top: 0px solid ${({ theme }) => theme.border.color};
+  border-bottom: 0px solid ${({ theme }) => theme.border.color};
 
   transition: border-color 0.5s ${({ theme }) => theme.transitionTimingFunction};
   ${Team} {

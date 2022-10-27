@@ -59,6 +59,8 @@ function Match({
             width={topParty?.image?.width ? topParty.image.width : 30}
             height={topParty?.image?.height ? topParty.image.height : 30}
             alt="icon"
+            style={{ borderRadius: topParty?.image?.borderRadius ? topParty.image.borderRadius : 10 }}
+
           />
           <Team>{topParty?.name}</Team>
           <Score won={topWon}>{topParty?.resultText}</Score>
@@ -79,6 +81,7 @@ function Match({
             }
             width={bottomParty?.image?.width ? bottomParty.image.width : 30}
             height={bottomParty?.image?.height ? bottomParty.image.height : 30}
+            style={{ borderRadius: bottomParty?.image?.borderRadius ? bottomParty.image.borderRadius : 10 }}
           />
           <Team>{bottomParty?.name}</Team>
           <Score won={bottomWon}>{bottomParty?.resultText}</Score>
