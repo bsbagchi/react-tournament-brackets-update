@@ -35,11 +35,7 @@
   ) => {
     // Position the final game at the center between upper and lower brackets
     // The final game should be positioned at the boundary between upper and lower brackets
-    const yResult = calculateVerticalPositioning({
-      rowHeight,
-      rowIndex,
-      columnIndex,
-    })/2-rowHeight/2;
+    const yResult = upperBracketHeight-rowHeight-rowHeight/2;
 
     return {
       x: columnIndex * columnWidth + canvasPadding + offsetX,
