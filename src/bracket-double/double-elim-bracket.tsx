@@ -111,6 +111,12 @@ const DoubleEliminationBracket = ({
 
   const upperColumns = generate2DBracketArray(convergingMatch, matches.upper);
   const lowerColumns = generate2DBracketArray(convergingMatch, matches.lower);
+  
+  console.log('Double Elimination Debug:');
+  console.log('Upper columns:', upperColumns.length, 'columns');
+  console.log('Upper column lengths:', upperColumns.map(col => col.length));
+  console.log('Lower columns:', lowerColumns.length, 'columns');
+  console.log('Lower column lengths:', lowerColumns.map(col => col.length));
   // [
   //   [ First column ]
   //   [ 2nd column ]
@@ -152,6 +158,12 @@ const DoubleEliminationBracket = ({
   const gameHeight =
     upperBracketDimensions.gameHeight + lowerBracketDimensions.gameHeight;
   const { startPosition } = upperBracketDimensions;
+  
+  console.log('Double Elimination Dimensions:');
+  console.log('Upper bracket height:', upperBracketDimensions.gameHeight);
+  console.log('Lower bracket height:', lowerBracketDimensions.gameHeight);
+  console.log('Total game height:', gameHeight);
+  console.log('Game width:', gameWidth);
 
   return (
     <ThemeProvider theme={theme}>

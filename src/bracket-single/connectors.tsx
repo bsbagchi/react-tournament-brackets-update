@@ -24,27 +24,35 @@ const Connectors = ({
     columnWidth,
     offsetY,
   });
+  
   const previousBottomPosition = (rowIndex + 1) * 2 - 1;
-  const previousTopMatchPosition = calculatePositionOfMatch(
-    previousBottomPosition - 1,
-    columnIndex - 1,
-    {
-      canvasPadding,
-      rowHeight,
-      columnWidth,
-      offsetY,
-    }
-  );
-  const previousBottomMatchPosition = calculatePositionOfMatch(
-    previousBottomPosition,
-    columnIndex - 1,
-    {
-      canvasPadding,
-      rowHeight,
-      columnWidth,
-      offsetY,
-    }
-  );
+  
+  // Only calculate positions for matches that actually exist
+  const previousTopMatchPosition = bracketSnippet.previousTopMatch 
+    ? calculatePositionOfMatch(
+        previousBottomPosition - 1,
+        columnIndex - 1,
+        {
+          canvasPadding,
+          rowHeight,
+          columnWidth,
+          offsetY,
+        }
+      )
+    : null;
+    
+  const previousBottomMatchPosition = bracketSnippet.previousBottomMatch 
+    ? calculatePositionOfMatch(
+        previousBottomPosition,
+        columnIndex - 1,
+        {
+          canvasPadding,
+          rowHeight,
+          columnWidth,
+          offsetY,
+        }
+      )
+    : null;
 
   return (
     <Connector

@@ -70,6 +70,11 @@ const SingleEliminationBracket = ({
   //   [ 3rd column ]
   //   [ lastGame ]
   // ]
+  
+  // Debug: Log the columns to see what's being generated
+  console.log('Generated columns:', columns.length, 'columns');
+  console.log('Column lengths:', columns.map(col => col.length));
+  console.log('Total matches in data:', matches.length);
 
   const { gameWidth, gameHeight, startPosition } = calculateSVGDimensions(
     columns[0].length,
@@ -127,7 +132,7 @@ const SingleEliminationBracket = ({
                           columnIndex={columnIndex}
                         />
                       )}
-                      {columnIndex !== 0 && (
+                      {columnIndex !== 0 && (previousTopMatch || previousBottomMatch) && (
                         <Connectors
                           {...{
                             bracketSnippet: {

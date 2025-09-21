@@ -40,7 +40,7 @@ const LowerBracket = ({
       );
       return (
         <>
-          {columnIndex !== 0 && (
+          {columnIndex !== 0 && (previousTopMatch || previousBottomMatch) && (
             <ConnectorsLower
               {...{
                 bracketSnippet: {

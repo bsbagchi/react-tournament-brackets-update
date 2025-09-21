@@ -30,24 +30,26 @@ const ConnectorsUpper = ({
   const previousBottomPosition = isUpperSeedingRound
     ? rowIndex
     : (rowIndex + 1) * 2 - 1;
+  
+  // Only calculate positions for matches that actually exist
   const previousTopMatchPosition =
-    !isUpperSeedingRound &&
-    positioningFunction(previousBottomPosition - 1, columnIndex - 1, {
-      canvasPadding,
-      rowHeight,
-      columnWidth,
-      offsetY,
-    });
-  const previousBottomMatchPosition = positioningFunction(
-    previousBottomPosition,
-    columnIndex - 1,
-    {
-      canvasPadding,
-      rowHeight,
-      columnWidth,
-      offsetY,
-    }
-  );
+    !isUpperSeedingRound && bracketSnippet.previousTopMatch
+      ? positioningFunction(previousBottomPosition - 1, columnIndex - 1, {
+          canvasPadding,
+          rowHeight,
+          columnWidth,
+          offsetY,
+        })
+      : null;
+      
+  const previousBottomMatchPosition = bracketSnippet.previousBottomMatch
+    ? positioningFunction(previousBottomPosition, columnIndex - 1, {
+        canvasPadding,
+        rowHeight,
+        columnWidth,
+        offsetY,
+      })
+    : null;
 
   return (
     <Connectors

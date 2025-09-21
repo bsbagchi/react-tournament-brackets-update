@@ -28,28 +28,34 @@ const ConnectorsLower = ({
   const previousBottomPosition = isUpperSeedingRound
     ? rowIndex
     : (rowIndex + 1) * 2 - 1;
+  
+  // Only calculate positions for matches that actually exist
   const previousTopMatchPosition =
-    !isUpperSeedingRound &&
-    calculatePositionOfMatchLowerBracket(
-      previousBottomPosition - 1,
-      columnIndex - 1,
-      {
-        canvasPadding,
-        rowHeight,
-        columnWidth,
-        offsetY,
-      }
-    );
-  const previousBottomMatchPosition = calculatePositionOfMatchLowerBracket(
-    previousBottomPosition,
-    columnIndex - 1,
-    {
-      canvasPadding,
-      rowHeight,
-      columnWidth,
-      offsetY,
-    }
-  );
+    !isUpperSeedingRound && bracketSnippet.previousTopMatch
+      ? calculatePositionOfMatchLowerBracket(
+          previousBottomPosition - 1,
+          columnIndex - 1,
+          {
+            canvasPadding,
+            rowHeight,
+            columnWidth,
+            offsetY,
+          }
+        )
+      : null;
+      
+  const previousBottomMatchPosition = bracketSnippet.previousBottomMatch
+    ? calculatePositionOfMatchLowerBracket(
+        previousBottomPosition,
+        columnIndex - 1,
+        {
+          canvasPadding,
+          rowHeight,
+          columnWidth,
+          offsetY,
+        }
+      )
+    : null;
 
   return (
     <Connectors
